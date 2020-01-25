@@ -4,7 +4,6 @@
 
 %define	snap	20180819
 
-%include	/usr/lib/rpm/macros.perl
 Summary:	Thomas Dickey's autoconf - source configuration tools
 Summary(pl.UTF-8):	autoconf (wersja Thomasa Dickeya) - narzędzie do automatycznego konfigurowania źródeł
 Name:		autoconf-dickey
