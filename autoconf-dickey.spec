@@ -3,17 +3,19 @@
 %bcond_with	tests	# do not perform "make check"
 
 %define	snap	20180819
+%define	rel	2
 
 Summary:	Thomas Dickey's autoconf - source configuration tools
 Summary(pl.UTF-8):	autoconf (wersja Thomasa Dickeya) - narzędzie do automatycznego konfigurowania źródeł
 Name:		autoconf-dickey
 Version:	2.52
-Release:	0.%{snap}.1
+Release:	0.%{snap}.%{rel}
 License:	GPL v2+/v3+
 Group:		Development/Building
 # stable releases:
 Source0:	http://ftp.debian.org:/debian/pool/main/a/autoconf-dickey/%{name}_%{version}+20180819.orig.tar.gz
 # Source0-md5:	1f9a7b4682902cdced6fa4b1bb67bb0c
+Patch0:		%{name}-info.patch
 URL:		https://invisible-island.net/autoconf/
 BuildRequires:	m4 >= 3:1.4.13
 BuildRequires:	rpm-perlprov
@@ -68,6 +70,7 @@ tylko podczas generowania samych skryptów autokonfiguracyjnych.
 
 %prep
 %setup -q -n autoconf-%{version}-%{snap}
+%patch0 -p1
 
 %build
 %configure \
@@ -85,6 +88,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} -j1 install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# no need for duplicates
+%{__rm} $RPM_BUILD_ROOT%{_infodir}/standards*.info
+
 rm -f $RPM_BUILD_ROOT%{_infodir}/dir
 
 %clean
@@ -99,10 +105,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS BUGS ChangeLog ChangeLog.2 NEWS README THANKS TODO
-%attr(755,root,root) %{_bindir}/auto*
+%attr(755,root,root) %{_bindir}/auto*-dickey
 %attr(755,root,root) %{_bindir}/ifnames-dickey
 %{_libdir}/autoconf-dickey
 %{_infodir}/autoconf-dickey.info*
-%{_infodir}/standards-dickey.info*
-%{_mandir}/man1/auto*.1*
+%{_mandir}/man1/auto*-dickey.1*
 %{_mandir}/man1/ifnames-dickey.1*
