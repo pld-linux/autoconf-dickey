@@ -1,5 +1,13 @@
 --- autoconf-2.52-20180819/doc/autoconf.texi.orig	2001-12-01 18:45:23.000000000 +0100
 +++ autoconf-2.52-20180819/doc/autoconf.texi	2020-08-23 22:34:16.257886594 +0200
+@@ -5,7 +5,6 @@
+ 
+ @finalout
+ @setchapternewpage odd
+-@setcontentsaftertitlepage
+ 
+ @include version.texi
+ 
 @@ -27,25 +27,15 @@
  @end ifnothtml
  

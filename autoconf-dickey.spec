@@ -3,7 +3,7 @@
 %bcond_with	tests	# do not perform "make check"
 
 %define	snap	20180819
-%define	rel	2
+%define	rel	3
 
 Summary:	Thomas Dickey's autoconf - source configuration tools
 Summary(pl.UTF-8):	autoconf (wersja Thomasa Dickeya) - narzędzie do automatycznego konfigurowania źródeł
@@ -33,7 +33,7 @@ Requires:	mktemp
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%if %{_host_cpu} == "x32"
+%if "%{_host_cpu}" == "x32"
 %define	build_arch %{_target_platform}
 %else
 %define	build_arch %{_host}
