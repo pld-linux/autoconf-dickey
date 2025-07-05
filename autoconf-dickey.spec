@@ -2,7 +2,7 @@
 # Conditional build:
 %bcond_with	tests	# do not perform "make check"
 
-%define	snap	20240618
+%define	snap	20250126
 %define	rel	1
 
 Summary:	Thomas Dickey's autoconf - source configuration tools
@@ -14,7 +14,7 @@ License:	GPL v2+/v3+
 Group:		Development/Building
 # stable releases:
 Source0:	http://ftp.debian.org:/debian/pool/main/a/autoconf-dickey/%{name}_%{version}+%{snap}.orig.tar.gz
-# Source0-md5:	522ccfc6cb7cccca1f3b13745cca9c21
+# Source0-md5:	dfc1cacb036307fa5e424257e6142571
 Patch0:		%{name}-info.patch
 URL:		https://invisible-island.net/autoconf/
 BuildRequires:	m4 >= 3:1.4.13
