@@ -71,7 +71,7 @@ tylko podczas generowania samych skryptów autokonfiguracyjnych.
 
 %prep
 %setup -q -n autoconf-%{version}-%{snap}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %configure \
