@@ -3,7 +3,7 @@
 %bcond_with	tests	# do not perform "make check"
 
 %define	snap	20250126
-%define	rel	1
+%define	rel	2
 
 Summary:	Thomas Dickey's autoconf - source configuration tools
 Summary(pl.UTF-8):	autoconf (wersja Thomasa Dickeya) - narzędzie do automatycznego konfigurowania źródeł
